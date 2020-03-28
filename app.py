@@ -9,10 +9,10 @@ bot = commands.Bot(command_prefix='!')
 
 def init():
     try : 
-        GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
         GPIO.setup(22, GPIO.OUT, initial=GPIO.HIGH)
         GPIO.setup(26, GPIO.OUT, initial=GPIO.HIGH)
         GPIO.setup(27, GPIO.OUT, initial=GPIO.HIGH)
+        GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BOARD)
     except : print(Fore.RED + "error loading gpios " + Fore.RESET )
