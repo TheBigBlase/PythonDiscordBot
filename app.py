@@ -23,7 +23,8 @@ def init():
     return settings 
         
 extensions = ['cogs.bash', 
-              'cogs.reload']
+              'cogs.reload',
+              'cogs.blink']
 
 
 settings = init()
