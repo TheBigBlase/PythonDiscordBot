@@ -3,7 +3,7 @@ from discord.ext import commands
 import json 
 import subprocess
 from colorama import Fore, Back, Style
-#import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO 
 
 bot = commands.Bot(command_prefix='!')
 
