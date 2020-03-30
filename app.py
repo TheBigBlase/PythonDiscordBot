@@ -10,12 +10,11 @@ bot = commands.Bot(command_prefix='!')
 def init():
     try : 
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(22, GPIO.OUT, initial=GPIO.HIGH)
-        GPIO.setup(26, GPIO.OUT, initial=GPIO.HIGH)
-        GPIO.setup(27, GPIO.OUT, initial=GPIO.HIGH)
-        GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
-        GPIO.setwarnings(False)
-    except : print(Fore.RED + "error loading gpios " + Fore.RESET )
+        GPIO.setup(22, GPIO.OUT)
+        GPIO.setup(26, GPIO.OUT)
+        GPIO.setup(27, GPIO.OUT)
+        GPIO.setup(17, GPIO.OUT)
+        GPIO.setwarnings(False)   except : print(Fore.RED + "error loading gpios " + Fore.RESET )
 
     with open("/home/pi/github/pythondiscordbot/settings.json", "r") as complex_data:
         data = complex_data.read()
