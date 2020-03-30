@@ -3,18 +3,18 @@ from discord.ext import commands
 import json 
 import subprocess
 from colorama import Fore, Back, Style
-import RPi.GPIO as GPIO 
+#import RPi.GPIO as GPIO 
 
 bot = commands.Bot(command_prefix='!')
 
 def init():
     try : 
+        GPIO.setmode(GPIO.BOARD)
         GPIO.setup(22, GPIO.OUT, initial=GPIO.HIGH)
         GPIO.setup(26, GPIO.OUT, initial=GPIO.HIGH)
         GPIO.setup(27, GPIO.OUT, initial=GPIO.HIGH)
         GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
     except : print(Fore.RED + "error loading gpios " + Fore.RESET )
 
     with open("./settings.json", "r") as complex_data:
