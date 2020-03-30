@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import subprocess
 from colorama import Fore, Back, Style
-#import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO 
 
 class Blink(commands.Cog):
     def __init__(self, bot):
@@ -33,13 +33,9 @@ class Blink(commands.Cog):
                 for k in range (0, len(self.pwmGreen)):
                     GPIO.PWM(self.pwmGreen[k],self.currentPWM)
 
-    async def stopBlinking(self, ctx, *arg):
-        if len(arg) !=1:
-            return await ctx.send("wrong number of arguments bro")
-        elif arg[0] == "stop".lower():
-            self.stop == True
-            await ctx.send("Should be stopped")
-
+        if arg[0] == "stop".lower():
+            self.stop = True
+            await ctx.send("stopped")
 
 def setup(bot):
     bot.add_cog(Blink(bot))

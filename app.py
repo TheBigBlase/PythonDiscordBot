@@ -15,7 +15,7 @@ def init():
         GPIO.setup(27, GPIO.OUT)
         GPIO.setup(17, GPIO.OUT)
         GPIO.setwarnings(False) 
-    except : print(Fore.RED + "error loading gpios " + Fore.RESET )
+    except: print(Fore.RED + "[ERROR] " + Fore.RESET )
 
     with open("/home/pi/github/pythondiscordbot/settings.json", "r") as complex_data:
         data = complex_data.read()
