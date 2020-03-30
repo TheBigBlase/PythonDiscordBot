@@ -11,7 +11,7 @@ class Blink(commands.Cog):
         self.currentPWM = 0
         self.direction = True 
         self.stop = False 
-        self.pwmGreen = []
+        self.pwmGreen = [17,22,26]
         self.pwmRed = []
 
     @commands.command()
