@@ -27,14 +27,16 @@ class Blink(commands.Cog):
     async def blink(self, ctx, *arg):
 
  
-        if len(arg) !=0 and arg[0] == "stop".lower():
-            self.stop = True
-            await ctx.send("stopped")
-            print(Fore.CYAN + "[BLINK] " + Fore.RESET + "stopped")
-            self.green.stop()
-            self.red.stop()
-
-
+        if len(arg) !=0
+            if arg[0] == "stop".lower():
+                self.stop = True
+                await ctx.send("stopped")
+                print(Fore.CYAN + "[BLINK] " + Fore.RESET + "stopped")
+                self.green.stop()
+                self.red.stop()
+            elif arg[0] == "state".lower:
+                awat ctx.send(str(self.stop))
+            
         else: 
             self.stop = False
             await ctx.send("Turning green leds on")
