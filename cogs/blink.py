@@ -36,6 +36,7 @@ class Blink(commands.Cog):
 
 
         else: 
+            self.stop = False
             await ctx.send("Turning green leds on")
             print(Fore.CYAN + "[BLINK] " + Fore.RESET + "Turning leds on") 
             while self.stop == False :
