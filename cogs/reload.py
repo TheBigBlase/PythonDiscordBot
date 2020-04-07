@@ -12,7 +12,6 @@ class Reload(commands.Cog):
     @commands.command()
     async def reload(self, ctx, *, arg):
         try : 
-            print(arg)
             self.bot.reload_extension("cogs."+arg)
             GPIO.cleanup()
         except commands.ExtensionError:
@@ -20,10 +19,10 @@ class Reload(commands.Cog):
                 " not found " + Fore.YELLOW + arg + Fore.RESET) 
             await ctx.send("error happend, extension not loaded")
         except : 
-            print(Fore.RED + "error cleaning gpios " + Fore.RESET )
+            print(Fore.RED + "error cleaning gpios" + Fore.RESET )
         else : 
             await ctx.send("heyyy worked")
-
+            print(Fore.GREEN + "[RELOAD] " + Fore.GREEN + arg + Fore.RESET + " Sucess, suckless") 
 
 
 def setup(bot):

@@ -8,15 +8,6 @@ import RPi.GPIO as GPIO
 bot = commands.Bot(command_prefix='!')
 
 def init():
-    try : 
-        GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(22, GPIO.OUT)
-        GPIO.setup(26, GPIO.OUT)
-        GPIO.setup(27, GPIO.OUT)
-        GPIO.setup(17, GPIO.OUT)
-        GPIO.setwarnings(False) 
-    except: print(Fore.RED + "[ERROR] " + Fore.RESET )
-
     with open("/home/pi/github/pythondiscordbot/settings.json", "r") as complex_data:
         data = complex_data.read()
         settings = json.loads(data)
@@ -31,9 +22,10 @@ settings = init()
 
 if __name__ == '__main__':
     for ext in extensions:
-        print(ext)
+        print(Fore.GREEN + "[BOOT] " + Fore.RESET + "loading " +Fore.MAGENTA + ext + Fore.RESET)
         bot.load_extension(ext)
-     
+        
+
 @bot.event
 async def on_ready():
     print(Fore.GREEN + 'Logged in as '+ Fore.RESET + bot.user.name)

@@ -15,7 +15,6 @@ class Bash(commands.Cog):
         message = " ".join(args)
         for string in args:
             tab.append(string)
-        print("tab = ", [*tab])
 
         p = subprocess.Popen(message, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         message, err = p.communicate()
