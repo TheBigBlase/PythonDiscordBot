@@ -35,7 +35,7 @@ class Blink(commands.Cog):
                 self.green.stop()
                 self.red.stop()
             elif arg[0] == "state".lower:
-                awat ctx.send(str(self.stop))
+                await ctx.send(str(self.stop))
             
         else: 
             self.stop = False
